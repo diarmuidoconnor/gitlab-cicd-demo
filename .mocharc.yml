@@ -1,0 +1,3 @@
+file:
+    - test/functional/api/donationsTest.js
+require: '@babel/register'

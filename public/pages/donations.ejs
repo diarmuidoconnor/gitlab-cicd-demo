@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+	<h1>List All Donations</h1>
+	
+	<p>{{ message }}</p>
+
+  <div ng-controller="donationsController as list">
+	<table align="center" valign="middle">
+	  <tbody ng-repeat="donation in donations | orderBy:'-upvotes'">
+        <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle"; >
+        	<td>
+            <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(donation._id)"></span>
+              {{donation.upvotes}}
+             </td>
+             <td> 
+             <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>{{donation.paymenttype}}</span>
+         	</td>
+             <td>
+            <span class="glyphicon glyphicon-euro"></span> 
+            {{donation.amount}}  
+    		</td>
+ 			<td>
+      
+      <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>
+
+      
+      <button type="button" class="btn btn-default" ng-click="delete(donation._id)">
+          <span class="glyphicon glyphicon-remove"></span> Remove 
+        </button>
+        <button type="button" class="btn btn-default" ng-click="update(donation)">
+          <span class="glyphicon glyphicon-edit"></span> Edit 
+        </button>
+        </span>    
+             </td>
+    	</tr>
+      </tbody>
+    </table> 
+  </div>
+</div>

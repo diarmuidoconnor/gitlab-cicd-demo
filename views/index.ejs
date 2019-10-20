@@ -1,0 +1,55 @@
+<html ng-app="DonationWebApp" >
+<head>
+  <title>Donation Web App</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.js"></script>
+
+  <script src="/javascripts/angularApp.js"></script>
+  <script src="/javascripts/controllers/maincontroller.js"></script>
+  <script src="/javascripts/controllers/donatecontroller.js"></script>
+  <script src="/javascripts/controllers/donationscontroller.js"></script>
+    <script src="/javascripts/controllers/aboutcontroller.js"></script>
+
+  <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+</head>
+
+  <body ng-controller="mainController">
+<!-- NAVBAR -->
+        
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/"><i class="fa fa-pied-piper-alt fa-lg" style="color: white;"></i> Donation Web App</a>
+                </div>
+            
+                <ul class="nav navbar-nav navbar-right">
+                  <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn btn-success">Register</button>
+              <button type="button" class="btn btn-default navbar-btn btn-primary">Log In</button>
+           </div>
+                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#donate"><i class="fa fa-money"></i> Donate</a></li>
+                    <li><a href="#donations"><i class="fa fa-list"></i> View All Donations</a></li>
+                    <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                    
+                </ul>
+
+            </div>
+            </nav>
+       
+
+ <!-- MAIN CONTENT AND INJECTED VIEWS -->
+ <div id="main">
+
+  <div ng-view></div>
+
+</div> <!-- End of main div -->
+   <footer class="text-center">
+    <p>View the Practical Lab for this App on <a href="http://ddrohan.gitbooks.io">GitBook.com</a></p>
+  </footer>
+</body>
+</html>

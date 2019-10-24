@@ -15,7 +15,7 @@
     "prebuild:dev": "npm-run-all test clean",
     "build:dev": "npm run compile",
     "postbuild:dev": "npm run start:prod",
-    "build:release": "npm-run-all  test clean compile ",
+    "build:release": "npm-run-all  test clean lint compile ",
     "postbuild:release": "rimraf dist/.git dist/test dist/nodemon.json"
   },
   "dependencies": {

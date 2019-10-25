@@ -20,7 +20,7 @@ describe("Donationss", () => {
       // })
       // url = await mongod.getConnectionString()
       connection = await MongoClient.connect(
-        process.env.MONGO_URI
+        process.env.MONGO_URI + 'donationsDB'
         , {
         useNewUrlParser: true,
         useUnifiedTopology: true

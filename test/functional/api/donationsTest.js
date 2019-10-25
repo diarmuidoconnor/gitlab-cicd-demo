@@ -37,7 +37,7 @@ describe("Donationss", () => {
   after(async () => {
     try {
       await connection.close()
-      await mongod.stop()
+      // await mongod.stop()
       await server.close()
     } catch (error) {
       console.log(error)
@@ -64,7 +64,7 @@ describe("Donationss", () => {
     }
   })
 
-  describe("GET /donations", () => {
+  describe.only("GET /donations", () => {
     it("should GET all the donations", done => {
       request(server)
         .get("/donations")

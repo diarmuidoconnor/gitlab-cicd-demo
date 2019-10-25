@@ -20,4 +20,4 @@ Test:
   stage: test
   script:
     - npm install
-    - npm run build:release
+    - npm run test

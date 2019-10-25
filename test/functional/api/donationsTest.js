@@ -36,9 +36,12 @@ describe("Donationss", () => {
 
   after(async () => {
     try {
-      await client.close()
+       client.close()
       // await mongod.stop()
+      console.log('before server stop')
       await server.close()
+      console.log('after server stop')
+
     } catch (error) {
       console.log(error)
     }

@@ -6,7 +6,7 @@ const { MongoClient } = require("mongodb")
 
 const _ = require("lodash")
 
-let server, mongod, url, db, connection, collection, validID
+let server, mongod, url, db, client, collection, validID
 
 describe("Donationss", () => {
   before(async () => {

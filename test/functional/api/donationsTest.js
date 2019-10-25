@@ -19,13 +19,13 @@ describe("Donationss", () => {
       //   }
       // })
       // url = await mongod.getConnectionString()
-      connection = await MongoClient.connect(
-        process.env.MONGO_URI + 'donationsDB'
+      client = await MongoClient.connect(
+        process.env.MONGO_URI 
         , {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
-      db = connection.db('donationsDB')
+      db = client.db('donationsDB')
       collection = db.collection("donations")
       // Must wait for DB setup to complete BEFORE starting the API server
       server = require("../../../bin/www")
@@ -36,7 +36,7 @@ describe("Donationss", () => {
 
   after(async () => {
     try {
-      await connection.close()
+      await client.close()
       // await mongod.stop()
       await server.close()
     } catch (error) {

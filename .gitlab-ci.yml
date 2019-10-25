@@ -7,7 +7,7 @@ cache:
     - node_modules/
 
 services:
-  - mongo
+   - mongo
 
 variables:
   MONGO_URI: 'mongodb://mongo:27017/'
@@ -20,4 +20,4 @@ Test:
   stage: test
   script:
     - npm install
-    - npm run test
+    - npm run test --exit

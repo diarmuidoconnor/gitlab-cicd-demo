@@ -1,0 +1,23 @@
+
+# Node docker image on which this would be run
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+services:
+  - mongo
+
+variables:
+  MONGO_URI: 'mongodb://mongo/donationsDB'
+  NODE_ENV: 'test'
+
+stages:
+  - test
+# Job 1:
+Test:
+  stage: test
+  script:
+    - npm install
+    - npm run build:release

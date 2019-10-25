@@ -1,4 +1,4 @@
 file:
     - test/functional/api/donationsTest.js
 require: '@babel/register'
-timeout: 6000
+exit: true

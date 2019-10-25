@@ -25,7 +25,7 @@ describe("Donationss", () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
-      db = connection.db(await mongod.getDbName())
+      db = connection.db('donationsDB')
       collection = db.collection("donations")
       // Must wait for DB setup to complete BEFORE starting the API server
       server = require("../../../bin/www")

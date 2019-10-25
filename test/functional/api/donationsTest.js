@@ -11,15 +11,17 @@ let server, mongod, url, db, connection, collection, validID
 describe("Donationss", () => {
   before(async () => {
     try {
-      mongod = new MongoMemoryServer({
-        instance: {
-          port: 27017,
-          dbPath: "./test/database",
-          dbName: "donationsdb" // by default generate random dbName
-        }
-      })
-      url = await mongod.getConnectionString()
-      connection = await MongoClient.connect(url, {
+      // mongod = new MongoMemoryServer({
+      //   instance: {
+      //     port: 27017,
+      //     dbPath: "./test/database",
+      //     dbName: "donationsdb" // by default generate random dbName
+      //   }
+      // })
+      // url = await mongod.getConnectionString()
+      connection = await MongoClient.connect(
+        process.env.MONGO_URI
+        , {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })

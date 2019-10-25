@@ -10,7 +10,7 @@ services:
   - mongo
 
 variables:
-  MONGO_URI: 'mongodb://mongo/donationsDB'
+  MONGO_URI: 'mongodb://mongo/'
   NODE_ENV: 'test'
 
 stages:

@@ -3,7 +3,7 @@ let express = require("express")
 let router = express.Router()
 let mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/donationsdb", {
+mongoose.connect(process.env.MONGO_URI + "donationsdb", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

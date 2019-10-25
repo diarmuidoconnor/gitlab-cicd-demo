@@ -34,18 +34,18 @@ describe("Donationss", () => {
     }
   })
 
-  after(async () => {
-    try {
-       client.close()
-      // await mongod.stop()
-      console.log('before server stop')
-      await server.close()
-      console.log('after server stop')
+  // after(async () => {
+  //   try {
+  //      client.close()
+  //     // await mongod.stop()
+  //     console.log('before server stop')
+  //     await server.close()
+  //     console.log('after server stop')
 
-    } catch (error) {
-      console.log(error)
-    }
-  })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // })
 
   beforeEach(async () => {
     try {

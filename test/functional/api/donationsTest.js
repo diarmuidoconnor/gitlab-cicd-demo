@@ -1,12 +1,11 @@
 const chai = require("chai")
 const expect = chai.expect
 const request = require("supertest")
-const MongoMemoryServer = require("mongodb-memory-server").MongoMemoryServer
 const { MongoClient } = require("mongodb")
 
 const _ = require("lodash")
 
-let server, mongod, url, db, client, collection, validID
+let server, db, client, collection, validID
 
 describe("Donationss", () => {
   before(async () => {
@@ -22,10 +21,10 @@ describe("Donationss", () => {
       client = await MongoClient.connect(
         process.env.MONGO_URI 
         , {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
-      db = client.db('donationsDB')
+          useNewUrlParser: true,
+          useUnifiedTopology: true
+        })
+      db = client.db("donationsDB")
       collection = db.collection("donations")
       // Must wait for DB setup to complete BEFORE starting the API server
       server = require("../../../bin/www")

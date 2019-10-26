@@ -13,10 +13,19 @@ variables:
   NODE_ENV: 'test'
 
 stages:
+  - build
   - test
 # Job 1:
+
+install_dependencies:
+      stage: build
+      script:
+        - npm install
+      artifacts:
+        paths:
+          - node_modules/
+
 Test:
   stage: test
   script:
-    - npm install
     - npm run build:release

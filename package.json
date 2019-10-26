@@ -14,7 +14,7 @@
     "start:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
     "prebuild:dev": "npm-run-all test clean",
     "build:dev": "npm run compile",
-    "postbuild:dev": "npm run start:prod",
+    "postbuild:dev": "cp .env dist/ && npm run start:prod",
     "build:release": "npm-run-all  test clean lint compile ",
     "postbuild:release": "rimraf dist/.git dist/test dist/nodemon.json"
   },

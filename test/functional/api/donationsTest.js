@@ -67,7 +67,7 @@ describe("Donationss", () => {
     }
   })
 
-  describe.only("GET /donations", () => {
+  describe("GET /donations", () => {
     it("should GET all the donations", done => {
       request(server)
         .get("/donations")

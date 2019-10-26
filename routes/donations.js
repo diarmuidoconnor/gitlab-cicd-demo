@@ -2,8 +2,11 @@ import Donation from "../models/donations"
 let express = require("express")
 let router = express.Router()
 let mongoose = require("mongoose")
-
-mongoose.connect(process.env.MONGO_URI + "donationsDB", {
+const dotenv = require('dotenv');
+dotenv.config();
+const uri = `${process.env.MONGO_URI}${process.env.MONGO_DB}`
+console.log(uri)
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

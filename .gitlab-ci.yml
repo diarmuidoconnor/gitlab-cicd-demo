@@ -11,7 +11,7 @@ services:
 
 variables:
   MONGO_URI: 'mongodb://mongo:27017/'
-  MONGO_DB=donationsDB
+  MONGO_DB: 'donationsDB'
   NODE_ENV: 'test'
 
 stages:

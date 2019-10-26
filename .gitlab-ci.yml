@@ -11,6 +11,7 @@ services:
 
 variables:
   MONGO_URI: 'mongodb://mongo:27017/'
+  MONGO_DB=donationsDB
   NODE_ENV: 'test'
 
 stages:
@@ -20,4 +21,4 @@ Test:
   stage: test
   script:
     - npm install
-    - npm run build:release
+    - npm run test

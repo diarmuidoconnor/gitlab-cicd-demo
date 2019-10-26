@@ -2,6 +2,8 @@ const chai = require("chai")
 const expect = chai.expect
 const request = require("supertest")
 const { MongoClient } = require("mongodb")
+const dotenv = require('dotenv');
+dotenv.config();
 
 const _ = require("lodash")
 
@@ -24,9 +26,8 @@ describe("Donationss", () => {
           useNewUrlParser: true,
           useUnifiedTopology: true
         })
-      db = client.db("donationsDB")
+      db = client.db(process.env.MONGO_DB)
       collection = db.collection("donations")
-      // Must wait for DB setup to complete BEFORE starting the API server
       server = require("../../../bin/www")
     } catch (error) {
       console.log(error)
@@ -66,7 +67,7 @@ describe("Donationss", () => {
     }
   })
 
-  describe("GET /donations", () => {
+  describe.only("GET /donations", () => {
     it("should GET all the donations", done => {
       request(server)
         .get("/donations")

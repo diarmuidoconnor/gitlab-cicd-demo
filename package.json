@@ -38,6 +38,7 @@
     "@babel/register": "^7.6.2",
     "chai": "^4.0.2",
     "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
     "eslint": "^6.5.1",
     "eslint-watch": "^6.0.1",
     "mocha": "^6.2.0",

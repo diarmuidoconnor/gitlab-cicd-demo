@@ -15,6 +15,7 @@ variables:
 stages:
   - build
   - test
+  - deploy
 # Job 1:
 
 install_dependencies:
@@ -28,4 +29,14 @@ install_dependencies:
 Test:
   stage: test
   script:
-    - npm run build:release
+    - npm run test
+
+deploy_staging:
+    stage: deploy
+    script:
+       - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/donations-2019-staging.git
+       - git push heroku master
+       - echo "Deployed to staging server"
+    environment:
+      name: staging
+      url: https://donations-2019-staging.herokuapp.com/
